@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,10 +23,135 @@
   }
 }
 
+.bg-zinc-950\/70 {
+    background-color: transparent;
+}
+
 /*body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }*/
+
+
+/* Nav link: draw-border effect (adaptado do CodePen) */
+
+
+/* Base button styling (equivalente ao .btn do SCSS) */
+
+
+
+/* Permite animar o ângulo */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0turn;
+}
+
+/* Base */
+.nav-animated-border {
+  position: relative;
+  outline: 1px solid #333 ;
+  border-radius: 9999px;
+}
+
+/* Border animada */
+.nav-animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  padding: 2px;
+
+  background:
+    conic-gradient(
+      from var(--border-angle),
+      transparent 70%,
+      #fff 99%,
+      #ffffff 95%,
+      transparent
+    );
+
+  /* cria o “anel” */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+}
+
+/* Hover */
+.nav-animated-border:hover::before {
+  animation: borderCycle 1400ms cubic-bezier(0.65, 0, 0.65, 1) 1 forwards;
+}
+
+/* 1 volta + fade */
+@keyframes borderCycle {
+  0% {
+    --border-angle: 0turn;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  /* movimento continua */
+  55% {
+    --border-angle: 0.85turn;
+    opacity: 1;
+  }
+
+  /* começa a desaparecer ainda em movimento */
+  65% {
+    --border-angle: 0.95turn;
+    opacity: 0.4;
+  }
+
+  /* termina invisível */
+  80% {
+    --border-angle: 1turn;
+    opacity: 0;
+  }
+
+
+/* Noise texture (estático) */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Animações leves (só transform + opacity) */
+@keyframes orbFloat {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.9; }
+  50%  { transform: translate3d(18px, -12px, 0) scale(1.03); opacity: 1; }
+  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.9; }
+}
+
+.bg-orb { will-change: transform, opacity; }
+.orb-1 { animation: orbFloat 18s ease-in-out infinite; }
+.orb-2 { animation: orbFloat 22s ease-in-out infinite; }
+.orb-3 { animation: orbFloat 26s ease-in-out infinite; }
+
+/* Noise “respira” (sem tremer) */
+@keyframes noiseBreath {
+  0%   { opacity: 0.02; }
+  50%  { opacity: 0.06; }
+  100% { opacity: 0.02; }
+}
+
+.noise-anim { animation: noiseBreath 10s ease-in-out infinite; }
+
+/* Acessibilidade: quem prefere menos motion */
+@media (prefers-reduced-motion: reduce) {
+  .orb-1, .orb-2, .orb-3, .noise-anim { animation: none !important; }
+}
+}
+
+
 
 

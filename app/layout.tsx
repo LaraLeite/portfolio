@@ -1,5 +1,14 @@
 import "./globals.css";
 import Link from "next/link";
+import { Source_Sans_3 } from "next/font/google";
+import Background from "./background";
+
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+});
+
 
 export const metadata = {
   title: "Lara Leite — Portefólio",
@@ -10,7 +19,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-       className="rounded-full border border-transparent px-3 py-2 text-sm text-zinc-300 hover:border-white/10 hover:text-zinc-50"    >
+       className="nav-animated-border rounded-full border border-transparent px-3 py-2 text-sm text-zinc-300 hover:border-white/10 hover:text-zinc-50"    >
       {label}
     </Link>
   );
@@ -19,7 +28,8 @@ function NavLink({ href, label }: { href: string; label: string }) {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-PT">
-      <body className="min-h-screen bg-zinc-950 text-zinc-50">
+      <body className={`${sourceSans.className} min-h-screen bg-zinc-950 text-zinc-50`}>
+         <Background />
         <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
             <Link href="/" className="font-semibold">
