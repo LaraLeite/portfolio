@@ -10,8 +10,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="rounded-full border border-transparent px-3 py-2 text-sm text-zinc-300 hover:border-white/10 hover:text-zinc-50"
-    >
+       className="rounded-full border border-transparent px-3 py-2 text-sm text-zinc-300 hover:border-white/10 hover:text-zinc-50"    >
       {label}
     </Link>
   );
