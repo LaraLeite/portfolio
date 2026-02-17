@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="text-3xl font-semibold sm:text-4xl">About</h1>
 
       <p className="max-w-2xl text-zinc-300">
-        Sou UX Designer em Braga Braga. Gosto de transformar complexidade em fluxos claros,
+        Sou UX Designer em Braga. Gosto de transformar complexidade em fluxos claros,
         com foco em consistência, acessibilidade e decisões baseadas em evidência.
       </p>
 
