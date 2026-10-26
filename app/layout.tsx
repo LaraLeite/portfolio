@@ -1,12 +1,12 @@
 import "./globals.css";
 import Link from "next/link";
-import { Source_Sans_3 } from "next/font/google";
+import { Yaldevi } from "next/font/google";
 import Background from "./background";
 
 
-const sourceSans = Source_Sans_3({
+const yaldevi = Yaldevi({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 
