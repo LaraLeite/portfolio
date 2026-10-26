@@ -24,8 +24,7 @@ export default function Home() {
     <div className="space-y-10">
       <section className="space-y-4">
         <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-5xl">
-          I’m a senior product designer, designing beyond screens and touchpoint teste.
-
+        I’m a Senior Product Experience Designer crafting innovative and thoughtful solutions beyond screens and touchpoints.
         </h1>
         <p className="max-w-2xl text-pretty text-zinc-300">
           Projetos selecionados com foco em clareza, acessibilidade e impacto.
