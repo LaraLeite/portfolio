@@ -35,7 +35,7 @@ export default function Home() {
     <div className="space-y-16">
       {/* Hero */}
       <section>
-        <h1 className="max-w-6xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-6xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-5xl">
           I’m a product designer who uses empathy and emotion to create experiences centered on people.
         </h1>
         <div className="mt-12 w-full border-t border-foreground/10" />
