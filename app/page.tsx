@@ -34,9 +34,7 @@ export default function Home() {
           I’m a Product Designer creating solutions that extend beyond screens.
         </h1>
 
-        <p className="mt-6 text-lg text-foreground/60 sm:text-xl">
-          Projetos selecionados com foco em clareza, acessibilidade e impacto.
-        </p>
+        <div className="mt-12 w-full border-t border-foreground/10" />
       </section>
 
       {/* Selected projects */}
