@@ -76,8 +76,12 @@ nav:has(.nav-item:hover) .nav-item:not(:hover) {
 
 .nav-item {
   opacity: 1;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: opacity 200ms ease;
 }
+
 
 /* Remove animated borders from navigation */
 
