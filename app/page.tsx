@@ -36,7 +36,7 @@ export default function Home() {
       {/* Hero */}
       <section>
         <h1 className="max-w-6xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-          I’m Lara, a product designer who uses empathy and considers emotion to create experiences that are designed for people
+          I’m a product designer who uses empathy and emotion to create experiences centered on people.
         </h1>
         <div className="mt-12 w-full border-t border-foreground/10" />
       </section>
