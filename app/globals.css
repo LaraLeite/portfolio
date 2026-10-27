@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* ========================================
-   Base theme — Light by default
+   Theme variables — Light by default
 ======================================== */
 
 :root {
@@ -10,6 +10,22 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #09090b;
+  --foreground: #fafafa;
+}
+
+/* ========================================
+   Tailwind theme
+======================================== */
 
 @theme inline {
   --color-background: var(--background);
@@ -19,7 +35,25 @@
 }
 
 /* ========================================
+   Base styles
+======================================== */
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ========================================
    Typography
+   Yaldevi is loaded in app/layout.tsx
 ======================================== */
 
 h1,
@@ -28,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Yaldevi", sans-serif;
+  font-family: inherit;
   font-weight: 600;
 }
 
@@ -109,91 +143,52 @@ h6 {
 }
 
 /* ========================================
-   Noise texture
+   Theme toggle — Sun / Moon
 ======================================== */
 
-.noise {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--foreground);
+  border-color: color-mix(
+    in srgb,
+    var(--foreground) 15%,
+    transparent
+  );
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
-/* ========================================
-   Background orbs
-======================================== */
-
-@keyframes orbFloat {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.9;
-  }
-
-  50% {
-    transform: translate3d(18px, -12px, 0) scale(1.03);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.9;
-  }
+.theme-toggle:hover {
+  background: color-mix(
+    in srgb,
+    var(--foreground) 8%,
+    transparent
+  );
 }
 
-.bg-orb {
-  will-change: transform, opacity;
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.orb-1 {
-  animation: orbFloat 18s ease-in-out infinite;
-}
-
-.orb-2 {
-  animation: orbFloat 22s ease-in-out infinite;
-}
-
-.orb-3 {
-  animation: orbFloat 26s ease-in-out infinite;
-}
-
-/* ========================================
-   Noise animation
-======================================== */
-
-@keyframes noiseBreath {
-  0% {
-    opacity: 0.02;
-  }
-
-  50% {
-    opacity: 0.06;
-  }
-
-  100% {
-    opacity: 0.02;
-  }
-}
-
-.noise-anim {
-  animation: noiseBreath 10s ease-in-out infinite;
-}
-
-/* ========================================
-   Theme — Light
-======================================== */
-
-:root[data-theme="light"] {
-  color-scheme: light;
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-/* ========================================
-   Theme — Dark
-======================================== */
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --background: #09090b;
-  --foreground: #fafafa;
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
 }
 
 /* ========================================
@@ -201,15 +196,12 @@ h6 {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .orb-1,
-  .orb-2,
-  .orb-3,
-  .noise-anim {
+  .nav-animated-border:hover::before {
     animation: none !important;
   }
 
-  .nav-animated-border:hover::before {
-    animation: none !important;
+  .theme-toggle {
+    transition: none;
   }
 }
 
