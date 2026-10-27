@@ -1,67 +1,85 @@
-function Card({
-  title,
-  desc,
-  meta,
-}: {
-  title: string;
-  desc: string;
-  meta: string;
-}) {
-  return (
-    <article className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-      <h2 className="text-lg font-semibold">{title}</h2>
-      <p className="mt-2 text-sm text-zinc-300">{desc}</p>
-      <p className="mt-3 text-xs text-zinc-400">{meta}</p>
-      <a className="mt-4 inline-block text-sm text-zinc-200 hover:underline" href="#">
-        Ver caso
-      </a>
-    </article>
-  );
-}
+
+const projects = [
+  {
+    name: "Kinetik",
+    description:
+      "Trust, clarity and consistency for a growing healthcare platform",
+    tag: "4 YEAR PARTNERSHIP, 4 PRODUCT ECOSYSTEM",
+    image: "/projects/kinetik.jpg",
+    imageAlt: "Kinetik — healthcare platform",
+  },
+  {
+    name: "Charted",
+    description: "Bringing flow and clarity to financial automation",
+    tag: "NEW BRAND, NEW CATEGORY POSITION",
+    image: "/projects/charted.jpg",
+    imageAlt: "Charted — financial automation",
+  },
+  {
+    name: "Solvd",
+    description:
+      "Making AI tangible for enterprises navigating transformation",
+    tag: "PARTNERS SINCE 2024",
+    image: "/projects/solvd.jpg",
+    imageAlt: "Solvd — AI for enterprise transformation",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="space-y-10">
-      <section className="space-y-4">
-        <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-5xl">
-        I’m a Product Designer creating solutions that extend beyond screens.
-        </h1>
-        <p className="max-w-2xl text-pretty text-zinc-300">
-          Projetos selecionados com foco em clareza, acessibilidade e impacto.
-        </p>
+    <div className="space-y-12">
+      {/* Intro navigation */}
+      <section className="flex items-center gap-8 text-sm">
+        <a
+          href="#projetos"
+          className="text-foreground transition-opacity hover:opacity-60"
+        >
+          Ver projetos
+        </a>
 
-        <div className="flex flex-wrap gap-3 pt-2">
-          <a
-            href="#projetos"
-            className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
-          >
-            Ver projetos
-          </a>
-          <a
-            href="/about"
-            className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-200 hover:bg-white/5"
-          >
-            Sobre mim
-          </a>
-        </div>
+        <a
+          href="/about"
+          className="text-foreground/50 transition-opacity hover:opacity-100"
+        >
+          Sobre mim
+        </a>
       </section>
 
-      <section id="projetos" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Card
-          title="Projeto 01"
-          desc="Problema → abordagem → impacto (2–3 linhas)."
-          meta="Research · UX · Prototipagem"
-        />
-        <Card
-          title="Projeto 02"
-          desc="Problema → abordagem → impacto (2–3 linhas)."
-          meta="Design System · Acessibilidade"
-        />
-        <Card
-          title="Projeto 03"
-          desc="Problema → abordagem → impacto (2–3 linhas)."
-          meta="Produto · Métricas · Iteração"
-        />
+      {/* Projects grid */}
+      <section
+        id="projetos"
+        aria-label="Projetos selecionados"
+        className="grid grid-cols-1 items-start gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+      >
+        {projects.map((project) => (
+          <article key={project.name} className="min-w-0">
+            {/* Project image */}
+            <div className="mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-100">
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+
+            {/* Project information */}
+            <h2 className="text-3xl font-normal tracking-tight text-foreground">
+              {project.name}
+            </h2>
+
+            <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/70">
+              {project.description}
+            </p>
+
+            {/* Project tag */}
+            <div className="mt-5 inline-block max-w-full bg-neutral-100 px-3 py-2">
+              <span className="font-mono text-xs tracking-wide text-neutral-800">
+                {project.tag}
+              </span>
+            </div>
+          </article>
+        ))}
       </section>
     </div>
   );
