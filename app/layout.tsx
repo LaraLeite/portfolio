@@ -16,22 +16,25 @@ export const metadata = {
   description: "UX Designer",
 };
 
+
 function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-       className="nav-animated-border rounded-full border border-transparent px-3 py-2 text-sm text-zinc-300 hover:border-white/10 hover:text-zinc-50"    >
+      className="nav-animated-border rounded-full border border-foreground/20 px-6 py-4 text-sm text-foreground/70 transition-colors hover:border-foreground/50 hover:text-foreground"
+    >
       {label}
     </Link>
   );
 }
 
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-PT">
       <body className={`${yaldevi.className} min-h-screen bg-background text-foreground`}>
-         <Background />
-        <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/70 backdrop-blur">
+         <Background />  
+         <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/80 backdrop-blur"> 
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
             <Link href="/" className="font-semibold">
               Lara Leite
@@ -48,8 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
 
-        <footer className="border-t border-white/10">
-          <div className="mx-auto flex max-w-5xl justify-between px-4 py-8 text-sm text-zinc-400">
+        <footer className="border-t border-foreground/10">
+          <div className="mx-auto flex max-w-5xl justify-between px-4 py-8 text-sm text-foreground/60">
             <span>© {new Date().getFullYear()} Lara Leite</span>
             <span>UX Designer</span>
           </div>
