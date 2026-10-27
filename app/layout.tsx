@@ -2,6 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 import { Yaldevi } from "next/font/google";
 import Background from "./background";
+import ThemeToggle from "./theme-toggle";
 
 
 const yaldevi = Yaldevi({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <NavLink href="/" label="Portefólio" />
               <NavLink href="/about" label="About" />
               <NavLink href="/travel" label="Travel" />
+              <ThemeToggle />
             </nav>
           </div>
         </header>
