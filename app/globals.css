@@ -154,8 +154,17 @@ h1, h2, h3, h4, h5, h6 {
   .orb-1, .orb-2, .orb-3, .noise-anim { animation: none !important; }
 }
 
-:root[data-theme="light"]
-:root[data-theme="dark"]
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #09090b;
+  --foreground: #fafafa;
+}
 
 }
 
