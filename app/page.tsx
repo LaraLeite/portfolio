@@ -6,14 +6,14 @@ const projects = [
       "Trust, clarity and consistency for a growing healthcare platform",
     tag: "4 YEAR PARTNERSHIP, 4 PRODUCT ECOSYSTEM",
     image: "/projects/kinetik.jpg",
-    imageAlt: "Kinetik — healthcare platform",
+    imageAlt: "Kinetik healthcare platform",
   },
   {
     name: "Charted",
     description: "Bringing flow and clarity to financial automation",
     tag: "NEW BRAND, NEW CATEGORY POSITION",
     image: "/projects/charted.jpg",
-    imageAlt: "Charted — financial automation",
+    imageAlt: "Charted financial automation",
   },
   {
     name: "Solvd",
@@ -21,31 +21,25 @@ const projects = [
       "Making AI tangible for enterprises navigating transformation",
     tag: "PARTNERS SINCE 2024",
     image: "/projects/solvd.jpg",
-    imageAlt: "Solvd — AI for enterprise transformation",
+    imageAlt: "Solvd AI enterprise transformation",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="space-y-12">
-      {/* Intro navigation */}
-      <section className="flex items-center gap-8 text-sm">
-        <a
-          href="#projetos"
-          className="text-foreground transition-opacity hover:opacity-60"
-        >
-          Ver projetos
-        </a>
+    <div className="space-y-16">
+      {/* Hero */}
+      <section className="pt-12 sm:pt-16 lg:pt-20">
+        <h1 className="max-w-6xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-7xl">
+          I’m a Product Designer creating solutions that extend beyond screens.
+        </h1>
 
-        <a
-          href="/about"
-          className="text-foreground/50 transition-opacity hover:opacity-100"
-        >
-          Sobre mim
-        </a>
+        <p className="mt-6 text-lg text-foreground/60 sm:text-xl">
+          Projetos selecionados com foco em clareza, acessibilidade e impacto.
+        </p>
       </section>
 
-      {/* Projects grid */}
+      {/* Selected projects */}
       <section
         id="projetos"
         aria-label="Projetos selecionados"
@@ -63,16 +57,17 @@ export default function Home() {
               />
             </div>
 
-            {/* Project information */}
+            {/* Project title */}
             <h2 className="text-3xl font-normal tracking-tight text-foreground">
               {project.name}
             </h2>
 
+            {/* Project description */}
             <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/70">
               {project.description}
             </p>
 
-            {/* Project tag */}
+            {/* Project label */}
             <div className="mt-5 inline-block max-w-full bg-neutral-100 px-3 py-2">
               <span className="font-mono text-xs tracking-wide text-neutral-800">
                 {project.tag}
