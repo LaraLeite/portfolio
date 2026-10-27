@@ -4,7 +4,7 @@ const trips = [
     title: "Lisboa → Porto",
     desc: "Café, museus e ruas bonitas.",
     meta: "2026 · 8 fotos",
-    image: "/travel/lisboa-porto.jpg",
+    image: "/travel/iran-oct-2018.jpg",
     imageAlt: "Viagem de Lisboa ao Porto",
   },
   {
