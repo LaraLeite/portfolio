@@ -4,8 +4,8 @@ export default function About() {
       <h1 className="text-3xl font-semibold sm:text-4xl">About</h1>
 
       <p className="max-w-2xl text-zinc-300">
-        Sou UX Designer em Braga. Gosto de transformar complexidade em fluxos claros,
-        com foco em consistência, acessibilidade e decisões baseadas em evidência.
+      I’m a Digital Product Designer based in Braga, Portugal, passionate about turning complexity into clear, accessible, and intuitive experiences.
+      With 10 years of experience in tech, I currently work as a UX Designer at Instituto de Informática, focusing on usability, accessibility, and Design Systems.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
