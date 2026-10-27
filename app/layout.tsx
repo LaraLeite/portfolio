@@ -29,9 +29,9 @@ function NavLink({ href, label }: { href: string; label: string }) {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-PT">
-      <body className={`${yaldevi.className} min-h-screen bg-zinc-950 text-zinc-50`}>
+      <body className={`${yaldevi.className} min-h-screen bg-background text-foreground`}>
          <Background />
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/70 backdrop-blur">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
             <Link href="/" className="font-semibold">
               Lara Leite
