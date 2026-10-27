@@ -1,36 +1,75 @@
-function TravelCard({
-  title,
-  desc,
-  meta,
-}: {
-  title: string;
-  desc: string;
-  meta: string;
-}) {
-  return (
-    <article className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-      <h2 className="text-lg font-semibold">{title}</h2>
-      <p className="mt-2 text-sm text-zinc-300">{desc}</p>
-      <p className="mt-3 text-xs text-zinc-400">{meta}</p>
-      <a className="mt-4 inline-block text-sm text-zinc-200 hover:underline" href="#">
-        Ver
-      </a>
-    </article>
-  );
-}
+
+const trips = [
+  {
+    title: "Lisboa → Porto",
+    desc: "Café, museus e ruas bonitas.",
+    meta: "2026 · 8 fotos",
+    image: "/travel/lisboa-porto.jpg",
+    imageAlt: "Viagem de Lisboa ao Porto",
+  },
+  {
+    title: "Guimarães",
+    desc: "Arquitetura, história e passeios lentos.",
+    meta: "2026 · 12 fotos",
+    image: "/travel/guimaraes.jpg",
+    imageAlt: "Ruas e arquitetura de Guimarães",
+  },
+  {
+    title: "Próxima viagem",
+    desc: "Ideias e listas: hotspots, comida e trilhos.",
+    meta: "Em planeamento",
+    image: "/travel/proxima-viagem.jpg",
+    imageAlt: "Inspiração para a próxima viagem",
+  },
+];
 
 export default function Travel() {
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-semibold sm:text-4xl">Travel</h1>
-      <p className="max-w-2xl text-zinc-300">
-        Uma coleção de viagens, fotos e notas (podes ir alimentando quando te apetecer).
-      </p>
+    <div className="space-y-12">
+      {/* Page introduction */}
+      <section>
+        <h1 className="text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
+          Travel
+        </h1>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <TravelCard title="Lisboa → Porto" desc="Café, museus e ruas bonitas." meta="2026 · 8 fotos" />
-        <TravelCard title="Guimarães" desc="Arquitetura, história e passeios lentos." meta="2026 · 12 fotos" />
-        <TravelCard title="Próxima viagem" desc="Ideias e listas: hotspots, comida, trilhos." meta="Em planeamento" />
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
+          Uma coleção de viagens, fotos e notas.
+        </p>
+      </section>
+
+      {/* Travel list */}
+      <section
+        aria-label="Viagens"
+        className="space-y-12"
+      >
+        {trips.map((trip) => (
+          <article key={trip.title} className="min-w-0">
+            {/* Travel image */}
+            <div className="mb-5 aspect-[16/9] overflow-hidden rounded-2xl bg-foreground/5">
+              <img
+                src={trip.image}
+                alt={trip.imageAlt}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+
+            {/* Information below the image */}
+            <div className="space-y-2">
+              <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+                {trip.title}
+              </h2>
+
+              <p className="text-base leading-relaxed text-foreground/70">
+                {trip.desc}
+              </p>
+
+              <p className="text-xs tracking-wide text-foreground/50">
+                {trip.meta}
+              </p>
+            </div>
+          </article>
+        ))}
       </section>
     </div>
   );
