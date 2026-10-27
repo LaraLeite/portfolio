@@ -21,13 +21,12 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="nav-animated-border rounded-full border border-foreground/20 px-6 py-4 text-sm text-foreground/70 transition-colors hover:border-foreground/50 hover:text-foreground"
+      className="nav-item px-3 py-2 text-sm text-foreground/70 transition-opacity duration-200 hover:text-foreground"
     >
       {label}
     </Link>
   );
 }
-
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -40,11 +39,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Lara Leite
             </Link>
 
-            <nav className="flex gap-2">
+            <nav className="flex items-center gap-6">
               <NavLink href="/" label="Portefólio" />
               <NavLink href="/about" label="About" />
               <NavLink href="/travel" label="Travel" />
-              <ThemeToggle />
+              <div className="nav-item">
+                <ThemeToggle />
+              </div>
             </nav>
           </div>
         </header>
