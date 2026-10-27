@@ -33,7 +33,7 @@ export default function Travel() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-          Uma coleção de viagens, fotos e notas.
+          A little further from the familiar.
         </p>
       </section>
 
