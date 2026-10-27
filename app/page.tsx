@@ -30,7 +30,7 @@ export default function Home() {
     <div className="space-y-16">
       <section>
       {/* Hero */}
-        <h1 className="max-w-6xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-6xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           I’m a Product Designer creating solutions that extend beyond screens.
         </h1>
 
