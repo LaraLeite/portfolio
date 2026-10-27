@@ -63,83 +63,33 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ========================================
-   Navigation — Animated border
+   Header navigation — Minimal
 ======================================== */
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0turn;
+nav:has(.nav-item:hover) .nav-item:not(:hover) {
+  opacity: 0.35;
 }
 
+.nav-item {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+/* Remove animated borders from navigation */
+
 .nav-animated-border {
-  position: relative;
-  outline: 1px solid #333;
+  outline: none;
+  border: none;
   border-radius: 9999px;
 }
 
 .nav-animated-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  padding: 2px;
-
-  background: conic-gradient(
-    from var(--border-angle),
-    transparent 70%,
-    #fff 95%,
-    #fff 99%,
-    transparent
-  );
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  opacity: 0;
-}
-
-.nav-animated-border:hover::before {
-  animation: borderCycle 1400ms
-    cubic-bezier(0.65, 0, 0.65, 1) 1 forwards;
-}
-
-@keyframes borderCycle {
-  0% {
-    --border-angle: 0turn;
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  55% {
-    --border-angle: 0.85turn;
-    opacity: 1;
-  }
-
-  65% {
-    --border-angle: 0.95turn;
-    opacity: 0.4;
-  }
-
-  80% {
-    --border-angle: 1turn;
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  display: none;
+  content: none;
 }
 
 /* ========================================
@@ -153,33 +103,29 @@ h6 {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  border: 1px solid var(--foreground);
-  border-color: color-mix(
-    in srgb,
-    var(--foreground) 15%,
-    transparent
-  );
-  border-radius: 9999px;
+  border: none;
+  border-radius: 50%;
   background: transparent;
   color: var(--foreground);
   cursor: pointer;
   transition:
-    background-color 180ms ease,
-    color 180ms ease,
-    border-color 180ms ease;
+    background-color 200ms ease,
+    color 200ms ease,
+    opacity 200ms ease;
 }
 
 .theme-toggle:hover {
   background: color-mix(
     in srgb,
-    var(--foreground) 8%,
+    var(--foreground) 7%,
     transparent
   );
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  display: block;
+  width: 24px;
+  height: 24px;
   stroke: currentColor;
   stroke-width: 1.7;
   stroke-linecap: round;
@@ -196,18 +142,10 @@ h6 {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-animated-border:hover::before {
-    animation: none !important;
-  }
-
+  .nav-item,
   .theme-toggle {
     transition: none;
   }
 }
-
-
-
-
-
 
 
