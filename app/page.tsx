@@ -28,6 +28,7 @@ const projects = [
 export default function Home() {
   return (
     <div className="space-y-16">
+      <section className="pt-12 sm:pt-16 lg:pt-20">
       {/* Hero */}
         <h1 className="max-w-6xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           I’m a Product Designer creating solutions that extend beyond screens.
