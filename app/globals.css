@@ -153,6 +153,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .orb-1, .orb-2, .orb-3, .noise-anim { animation: none !important; }
 }
+
+:root[data-theme="light"]
+:root[data-theme="dark"]
+
 }
 
 
