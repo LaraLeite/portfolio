@@ -1,18 +1,18 @@
 
 const trips = [
+    {
+    title: "Guimarães",
+    desc: "Arquitetura, história e passeios lentos.",
+    meta: "2026 · 12 fotos",
+    image: "/travel/taiwan-2026-oct.jpg",
+    imageAlt: "Ruas e arquitetura de Guimarães",
+  },
   {
     title: "Iran",
     desc: "Iran - Oct, 2018",
     meta: "Iran - Oct, 2018",
     image: "/travel/iran-oct-2018.jpg",
     imageAlt: "Iran - Oct, 2018",
-  },
-  {
-    title: "Guimarães",
-    desc: "Arquitetura, história e passeios lentos.",
-    meta: "2026 · 12 fotos",
-    image: "/travel/guimaraes.jpg",
-    imageAlt: "Ruas e arquitetura de Guimarães",
   },
   {
     title: "Próxima viagem",
