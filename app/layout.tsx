@@ -1,64 +1,62 @@
-import "./globals.css";
-import Link from "next/link";
-import { Yaldevi } from "next/font/google";
-import Background from "./background";
-import ThemeToggle from "./theme-toggle";
 
+import "./globals.css";
+import { Yaldevi } from "next/font/google";
 
 const yaldevi = Yaldevi({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-
 export const metadata = {
-  title: "Lara Leite — Portefólio",
-  description: "UX Designer",
+  title: "Service Temporarily Unavailable",
+  description: "The service is temporarily unavailable.",
 };
 
-
-function NavLink({ href, label }: { href: string; label: string }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Link
-      href={href}
-      className="nav-item px-3 py-2 text-sm text-foreground/70 transition-opacity duration-200 hover:text-foreground"
-    >
-      {label}
-    </Link>
-  );
-}
+    <html lang="en">
+      <body className={`${yaldevi.className} min-h-screen bg-[#111111] text-white`}>
+        <main className="min-h-screen w-full bg-[#111111] flex items-start justify-center px-6 py-16 md:py-20">
+          <section className="w-full max-w-3xl">
+            <div className="flex items-center justify-between gap-4 border-b border-neutral-800 pb-10">
+              <p className="text-xs tracking-[0.2em] text-neutral-400">
+                SERVER STATUS
+              </p>
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="pt-PT">
-      <body className={`${yaldevi.className} min-h-screen flex flex-col bg-background text-foreground`}>
-         <Background />  
-         <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/80 backdrop-blur"> 
-          <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
-            <Link href="/" className="font-semibold">
-              Lara Leite
-            </Link>
+              <p className="text-xs text-amber-400">
+                SERVICE UNAVAILABLE
+              </p>
+            </div>
 
-            <nav className="flex items-center gap-6">
-              <NavLink href="/" label="Work" />
-              <NavLink href="/about" label="About" />
-              <NavLink href="/travel" label="Travel" />
-              <div className="nav-item">
-                <ThemeToggle />
-              </div>
-            </nav>
-          </div>
-        </header>
+            <div className="py-16 md:py-20">
+              <h1 className="text-7xl md:text-8xl font-medium tracking-tight mb-5">
+                503
+              </h1>
 
-        <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10">{children}</main>
+              <h2 className="text-xl md:text-2xl mb-5">
+                Service Temporarily Unavailable
+              </h2>
 
-        <footer className="mt-auto border-t border-foreground/10">
-          <div className="mx-auto flex max-w-5xl justify-between px-4 py-8 text-sm text-foreground/60">
-            <span>© {new Date().getFullYear()} Lara Leite</span>
-            <span>UX Designer</span>
-          </div>
-        </footer>
+              <p className="max-w-2xl text-base md:text-lg leading-relaxed text-neutral-400">
+                The server is temporarily unable to handle this
+                request. This may be due to maintenance or a
+                temporary overload. Please try again later.
+              </p>
+            </div>
+
+            <div className="border-t border-neutral-800 pt-6">
+              <p className="text-xs tracking-wider text-neutral-500">
+                HTTP ERROR 503 · PLEASE TRY AGAIN LATER
+              </p>
+            </div>
+          </section>
+        </main>
       </body>
     </html>
   );
 }
+
