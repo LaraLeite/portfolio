@@ -51,9 +51,6 @@ export default function ExperiencePage() {
         </Link>
 
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-            Background & experience
-          </p>
 
           <h1 className="max-w-4xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-6xl">
             A selection of my work across digital products and experiences.
