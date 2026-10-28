@@ -41,11 +41,22 @@ export default function Home() {
         <div className="mt-12 w-full border-t border-foreground/10" />
       </section>
 
+      <section className="pt-2">
+        <Link
+          href="/experience"
+          className="inline-flex items-center gap-2 text-sm text-foreground/70 transition-opacity hover:opacity-50"
+        >
+          Selected experience
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </section>
+
+
       {/* Selected projects */}
       <section
         id="projetos"
         aria-label="Selected projects"
-        className="grid grid-cols-1 items-start gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+        className="hidden grid grid-cols-1 items-start gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
       >
         {projects.map((project) => (
           <article key={project.slug} className="min-w-0">
