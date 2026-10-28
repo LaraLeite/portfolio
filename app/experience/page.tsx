@@ -132,16 +132,7 @@ export default function ExperiencePage() {
 
       {/* Professional experience */}
       <section className="space-y-8">
-        <header className="space-y-3">
-          <h2 className="text-2xl font-normal tracking-tight text-foreground sm:text-3xl">
-            Experience
-          </h2>
-
-          <p className="max-w-2xl text-base leading-relaxed text-foreground/60 sm:text-lg">
-            A selection of teams, products and challenges that have shaped the
-            way I approach design.
-          </p>
-        </header>
+    
 
         <div className="border-t border-foreground/10">
           {experience.map((item, index) => (
