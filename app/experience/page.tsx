@@ -1,14 +1,21 @@
 
 import Link from "next/link";
 
-const experience = [
-  {
-    company: "Instituto de Informática",
-    role: "UX Designer",
-    description:
-      "Usability, accessibility and Design Systems, creating clearer and more consistent digital experiences.",
-    areas: ["UX Design", "Accessibility", "Design Systems"],
-  },
+  const experience = [
+    {
+      company: "Instituto de Informática",
+      role: "UX Designer",
+      description:
+        "Usability, accessibility and Design Systems, creating clearer and more consistent digital experiences.",
+      areas: ["UX Design", "Accessibility", "Design Systems"],
+    
+      highlights: [
+        "Conducting user research",
+        "Improving usability and accessibility",
+        "Contributing to Design Systems",
+        "Collaborating with developers and stakeholders",
+      ],
+    },
   {
     company: "Loggi",
     role: "Mid-level Product Designer",
