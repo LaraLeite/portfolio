@@ -2,14 +2,12 @@
 import Link from "next/link";
 
 const expertise = [
-  "Payment Systems & Financial Operations: Worked as a Product/UX Designer on complex payment experiences, including payment channels, homebanking, international transfers and direct debits, translating business rules and technical constraints into clear user flows and interfaces.",
-  "Digital Document Wallet: Worked as a Product Designer & UX Researcher from discovery to delivery, covering research, international benchmarking, concept development, document management flows, prototyping, usability testing and development handoff.",
-  "Explored as a UX Designer how intelligent automation could simplify document identification and categorisation while maintaining transparency, trust and user control.",
-  "Design System: Scalable & Consistent Experiences: Contributed as a Product Designer by applying and validating components across projects, identifying gaps and collaborating on new reusable patterns and component needs.",
+  "Payment Systems & Financial Operations — Designing clear user flows for payment channels, homebanking, international transfers and direct debits, balancing business rules with technical constraints.",
+  "Digital Document Wallet & AI — From research and discovery to prototyping, usability testing and handoff, exploring document management and AI-powered identification and categorisation.",
+  "Design Systems & AI — Applying and validating reusable components, identifying system gaps, and exploring how AI can support component creation, documentation and designer workflows.",
+  "Complex Public Services & Bilateral Agreements — Translating legislation, international processes and operational requirements into clear, accessible end-to-end digital journeys.",
   "Design System: How AI could support smarter Design Systems, component creation, documentation, prototyping and more contextual guidance for designers.",
-  "Bilateral Agreements | Complex Public Services: Translating complex international processes, legislation, business rules and operational requirements into clearer digital journeys.",
-  "Accessibility & UX Writing | Inclusive Experiences: Integrating accessibility, terminology, microcopy, error handling, system feedback and inclusive interaction patterns into complex public services.",
-  "Institutional Management & Complex Administrative Processes: Processes involving IPSS and Mutual Associations, translating administrative and business requirements into end-to-end digital journeys, from UX planning and user flows to prototyping, handoff and post-development UX review"
+  "Accessibility, UX Writing & Administrative Processes — Improving inclusive interactions through clear terminology, microcopy, error handling and accessible workflows across complex public services and institutional processes.",
 ];
 
 const experience = [
