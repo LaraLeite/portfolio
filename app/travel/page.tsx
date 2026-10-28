@@ -3,7 +3,7 @@ const trips = [
     {
     title: "Guimarães",
     desc: "Arquitetura, história e passeios lentos.",
-    meta: "2026 · 12 fotos",
+    meta: "Tainan, Taiwan - Oct, 2026",
     image: "/travel/taiwan-2026-oct.jpg",
     imageAlt: "Ruas e arquitetura de Guimarães",
   },
@@ -12,7 +12,7 @@ const trips = [
     desc: "Iran - Oct, 2018",
     meta: "Iran - Oct, 2018",
     image: "/travel/iran-oct-2018.jpg",
-    imageAlt: "Iran - Oct, 2018",
+    imageAlt: "Kerman, Iran - Oct, 2018",
   },
   {
     title: "Próxima viagem",
