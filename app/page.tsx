@@ -1,103 +1,41 @@
 
-import Link from "next/link";
-
-const projects = [
-  {
-    name: "Kinetik",
-    description:
-      "Trust, clarity and consistency for a growing healthcare platform",
-    tag: "4 YEAR PARTNERSHIP, 4 PRODUCT ECOSYSTEM",
-    image: "/projects/kinetik.jpg",
-    slug: "kinetik",
-    imageAlt: "Kinetik healthcare platform",
-  },
-  {
-    name: "Charted",
-    description: "Bringing flow and clarity to financial automation",
-    tag: "NEW BRAND, NEW CATEGORY POSITION",
-    image: "/projects/charted.jpg",
-    slug: "charted",
-    imageAlt: "Charted financial automation",
-  },
-  {
-    name: "Solvd",
-    description:
-      "Making AI tangible for enterprises navigating transformation",
-    tag: "PARTNERS SINCE 2024",
-    image: "/projects/solvd.jpg",
-    slug: "solvd",
-    imageAlt: "Solvd AI enterprise transformation",
-  },
-];
 
 export default function Home() {
   return (
-    <div className="space-y-16">
-      {/* Hero */}
-      <section>
-        <h1 className="max-w-6xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-5xl">
-          I’m a product designer who uses empathy and emotion to create experiences centered on people.
-        </h1>
-        <div className="mt-12 w-full border-t border-foreground/10" />
+    <main className="min-h-screen bg-[#111111] text-white flex items-center justify-center px-6">
+      <section className="w-full max-w-xl">
+        <div className="flex items-center justify-between mb-8">
+          <p className="text-xs tracking-[0.2em] text-neutral-400">
+            SERVER STATUS
+          </p>
+          <span className="text-xs text-amber-400">
+            SERVICE UNAVAILABLE
+          </span>
+        </div>
+
+        <div className="border-t border-neutral-800 pt-10">
+          <h1 className="text-7xl md:text-8xl font-medium tracking-tight mb-5">
+            503
+          </h1>
+
+          <h2 className="text-xl md:text-2xl mb-4">
+            Service Temporarily Unavailable
+          </h2>
+
+          <p className="text-neutral-400 leading-relaxed">
+            The server is temporarily unable to handle this
+            request. This may be due to maintenance or a
+            temporary overload. Please try again later.
+          </p>
+        </div>
+
+        <div className="mt-12 border-t border-neutral-800 pt-5">
+          <p className="text-xs tracking-wider text-neutral-500">
+            HTTP ERROR 503 · PLEASE TRY AGAIN LATER
+          </p>
+        </div>
       </section>
-
-      <section className="pt-2">
-        <Link
-          href="/experience"
-          className="inline-flex items-center gap-2 text-sm text-foreground/70 transition-opacity hover:opacity-50"
-        >
-          Selected experience
-          <span aria-hidden="true">↗</span>
-        </Link>
-      </section>
-
-
-      {/* Selected projects */}
-      <section
-        id="projetos"
-        aria-label="Selected projects"
-        className="hidden grid grid-cols-1 items-start gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <article key={project.slug} className="min-w-0">
-            {/* Clickable project image */}
-            <Link
-              href={`/projects/${project.slug}`}
-              aria-label={`View ${project.name} project`}
-              className="mb-5 block aspect-[4/3] overflow-hidden rounded-2xl bg-foreground/5"
-            >
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
-              />
-            </Link>
-
-            {/* Clickable project title */}
-            <h2 className="text-3xl font-normal tracking-tight text-foreground">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="transition-opacity hover:opacity-60"
-              >
-                {project.name}
-              </Link>
-            </h2>
-
-            {/* Project description */}
-            <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/70">
-              {project.description}
-            </p>
-
-            {/* Project label */}
-            <div className="mt-5 inline-block max-w-full bg-neutral-100 px-3 py-2">
-              <span className="font-mono text-xs tracking-wide text-neutral-800">
-                {project.tag}
-              </span>
-            </div>
-          </article>
-        ))}
-      </section>
-    </div>
+    </main>
   );
 }
+
