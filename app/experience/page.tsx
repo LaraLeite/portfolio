@@ -1,4 +1,5 @@
 
+
 import Link from "next/link";
 
 const expertise = [
@@ -17,33 +18,21 @@ const experience = [
     role: "UX Designer",
     description:
       "Working on usability, accessibility and Design Systems to create clearer, more consistent digital experiences.",
-    highlights: [
-      "UX Design",
-      "Accessibility",
-      "Design Systems",
-    ],
+    highlights: ["UX Design", "Accessibility", "Design Systems"],
   },
   {
     company: "Loggi",
     role: "Mid-level Product Designer",
     description:
       "Designing internal platforms for transport operations, exploring user needs and opportunities to improve route management and operational workflows.",
-    highlights: [
-      "User Research",
-      "Internal Platforms",
-      "Route Operations",
-    ],
+    highlights: ["User Research", "Internal Platforms", "Route Operations"],
   },
   {
     company: "Kinetik",
     role: "Product Design",
     description:
       "A healthcare product ecosystem focused on clarity, consistency and usability across multiple digital products.",
-    highlights: [
-      "Healthcare",
-      "Product Experience",
-      "Consistency",
-    ],
+    highlights: ["Healthcare", "Product Experience", "Consistency"],
   },
   {
     company: "Charted",
@@ -71,42 +60,42 @@ const experience = [
 
 export default function ExperiencePage() {
   return (
-    <div className="space-y-24">
-      {/* Back link */}
-      <Link
-        href="/"
-        className="inline-block text-sm text-foreground/50 transition-opacity hover:opacity-60"
-      >
-        ← Back home
-      </Link>
+    <div className="space-y-16">
+      <header className="space-y-5">
+        <Link
+          href="/"
+          className="inline-block text-sm text-foreground/50 transition-opacity hover:opacity-60"
+        >
+          ← Back home
+        </Link>
 
-      {/* Introduction */}
-      <header className="space-y-6">
-        <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-          Background & Experience
-        </p>
+        <div className="space-y-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+            Background & Experience
+          </p>
 
-        <h1 className="max-w-4xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-6xl">
-          A selection of my work across digital products and experiences.
-        </h1>
+          <h1 className="max-w-4xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-6xl">
+            A selection of my work across digital products and experiences.
+          </h1>
 
-        <p className="max-w-3xl text-lg leading-relaxed text-foreground/60 sm:text-xl">
-          My experience spans user research, product design and the challenge
-          of making complex systems easier to understand and use.
-        </p>
+          <p className="max-w-3xl text-lg leading-relaxed text-foreground/60">
+            My experience spans user research, product design and the challenge
+            of making complex systems easier to understand and use.
+          </p>
+        </div>
       </header>
 
       {/* Areas of expertise */}
-      <section className="space-y-8">
-        <div className="space-y-5">
-          <h2 className="text-4xl font-normal tracking-tight text-foreground sm:text-5xl">
+      <section className="space-y-6">
+        <div className="space-y-3">
+          <h2 className="text-2xl font-normal tracking-tight text-foreground sm:text-3xl">
             What I do
           </h2>
 
-          <p className="max-w-3xl text-xl leading-relaxed text-foreground/60 sm:text-2xl">
+          <p className="max-w-2xl text-base leading-relaxed text-foreground/60 sm:text-lg">
             I work across research, product design and usability to understand
-            people&apos;s needs, make sense of complex problems, and create
-            digital experiences that are clear, useful and intuitive.
+            people&apos;s needs and create digital experiences that are clear,
+            useful and intuitive.
           </p>
         </div>
 
@@ -114,7 +103,7 @@ export default function ExperiencePage() {
           {expertise.map((item) => (
             <div
               key={item}
-              className="border-b border-foreground/10 py-5 text-xl tracking-tight text-foreground sm:py-6 sm:text-2xl"
+              className="border-b border-foreground/10 py-3 text-base text-foreground sm:text-lg"
             >
               {item}
             </div>
@@ -123,15 +112,15 @@ export default function ExperiencePage() {
       </section>
 
       {/* Professional experience */}
-      <section className="space-y-10">
-        <header className="space-y-4">
-          <h2 className="text-4xl font-normal tracking-tight text-foreground sm:text-5xl">
+      <section className="space-y-8">
+        <header className="space-y-3">
+          <h2 className="text-2xl font-normal tracking-tight text-foreground sm:text-3xl">
             Experience
           </h2>
 
-          <p className="max-w-2xl text-lg leading-relaxed text-foreground/60">
-            A selection of teams, products and challenges that have shaped
-            the way I approach design.
+          <p className="max-w-2xl text-base leading-relaxed text-foreground/60 sm:text-lg">
+            A selection of teams, products and challenges that have shaped the
+            way I approach design.
           </p>
         </header>
 
@@ -139,28 +128,28 @@ export default function ExperiencePage() {
           {experience.map((item, index) => (
             <article
               key={item.company}
-              className="grid gap-5 border-b border-foreground/10 py-8 sm:grid-cols-[220px_1fr] sm:gap-12 sm:py-10"
+              className="grid gap-4 border-b border-foreground/10 py-7 sm:grid-cols-[200px_1fr] sm:gap-10 sm:py-8"
             >
               <div className="space-y-2">
                 <p className="text-xs tracking-widest text-foreground/40">
                   {String(index + 1).padStart(2, "0")}
                 </p>
 
-                <h3 className="text-xl font-medium tracking-tight text-foreground sm:text-2xl">
+                <h3 className="text-lg font-medium tracking-tight text-foreground sm:text-xl">
                   {item.company}
                 </h3>
               </div>
 
-              <div className="space-y-5">
-                <h4 className="text-lg text-foreground/80 sm:text-xl">
+              <div className="space-y-4">
+                <h4 className="text-base font-medium text-foreground/80 sm:text-lg">
                   {item.role}
                 </h4>
 
-                <p className="max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg">
+                <p className="max-w-2xl text-base leading-7 text-foreground/60">
                   {item.description}
                 </p>
 
-                <div className="flex flex-wrap gap-x-5 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {item.highlights.map((highlight) => (
                     <span
                       key={highlight}
@@ -176,8 +165,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Back to home */}
-      <footer className="border-t border-foreground/10 pt-8">
+      <footer className="border-t border-foreground/10 pt-6">
         <Link
           href="/"
           className="text-sm text-foreground/60 transition-opacity hover:opacity-50"
@@ -188,3 +176,4 @@ export default function ExperiencePage() {
     </div>
   );
 }
+
