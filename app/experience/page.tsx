@@ -120,12 +120,11 @@ export default function ExperiencePage() {
           </p>
 
           <h1 className="max-w-4xl text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-6xl">
-            A selection of my work across digital products and experiences.
+            Where I’ve contributed and what I’ve worked on.
           </h1>
 
           <p className="max-w-3xl text-lg leading-relaxed text-foreground/60">
-            My experience spans user research, product design and the challenge
-            of making complex systems easier to understand and use.
+            An overview of my contributions across different teams and products.
           </p>
         </div>
       </header>
