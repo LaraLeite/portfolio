@@ -1,11 +1,11 @@
 
 const trips = [
   {
-    title: "Lisboa → Porto",
-    desc: "Café, museus e ruas bonitas.",
-    meta: "2026 · 8 fotos",
+    title: "Iran",
+    desc: "Iran - Oct, 2018",
+    meta: "Iran - Oct, 2018",
     image: "/travel/iran-oct-2018.jpg",
-    imageAlt: "Viagem de Lisboa ao Porto",
+    imageAlt: "Iran - Oct, 2018",
   },
   {
     title: "Guimarães",
@@ -55,19 +55,12 @@ export default function Travel() {
             </div>
 
             {/* Information below the image */}
-            <div className="space-y-2">
-              <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-                {trip.title}
-              </h2>
-
+            <div>
               <p className="text-base leading-relaxed text-foreground/70">
                 {trip.desc}
               </p>
-
-              <p className="text-xs tracking-wide text-foreground/50">
-                {trip.meta}
-              </p>
             </div>
+
           </article>
         ))}
       </section>
