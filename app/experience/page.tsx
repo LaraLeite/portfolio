@@ -130,32 +130,6 @@ export default function ExperiencePage() {
         </div>
       </header>
 
-      {/* Areas of expertise */}
-      <section className="space-y-6">
-        <div className="space-y-3">
-          <h2 className="text-2xl font-normal tracking-tight text-foreground sm:text-3xl">
-            What I do
-          </h2>
-
-          <p className="max-w-2xl text-base leading-relaxed text-foreground/60 sm:text-lg">
-            I work across research, product design and usability to understand
-            people&apos;s needs and create digital experiences that are clear,
-            useful and intuitive.
-          </p>
-        </div>
-
-        <div className="border-t border-foreground/10">
-          {expertise.map((item) => (
-            <div
-              key={item}
-              className="border-b border-foreground/10 py-3 text-base text-foreground sm:text-lg"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Professional experience */}
       <section className="space-y-8">
         <header className="space-y-3">
